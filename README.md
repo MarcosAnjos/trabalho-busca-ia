@@ -53,7 +53,7 @@ R         | Recompensa
 
 ***********
 
-## Mapa ultilzido para a busca BFS e DFS
+## Mapa utilizado para a busca BFS e DFS
   0 | 1 | 2 | 3 | 4 |
 :--:|:-:|:-:|:-:|:-:|
  1  | 1 | 10| 20| 0 |
@@ -65,7 +65,7 @@ R         | Recompensa
 
 ***********
 
-## Mapa ultilzido para a busca Gulosa e A*
+## Mapa utilizado para a busca Gulosa e A*
   0 | 1 | 2 | 3 | 4 |
 :--:|:-:|:-:|:-:|:-:|
  1  | 1 | 10| 20| 0 |
