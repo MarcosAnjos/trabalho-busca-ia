@@ -54,16 +54,43 @@ R         | Recompensa
 ***********
 
 ## Mapa utilizado para a busca BFS e DFS
+### Representação do mapa 
   0 | 1 | 2 | 3 | 4 |
 :--:|:-:|:-:|:-:|:-:|
  1  | 1 | 10| 20| 0 |
 20  |"p"|"p"| 1 | 0 |
 1   | 1 | 4 | 1 |"R"|
 1   |"p"|"R"|20 |10 |
-10  |"p"|"p"| 1 | 4 |
+10  |"p"|"p"| 1 |"R"|
 1  | 1  |20 |"F"|"p"|
+1  | 4  |"R"|"p"|"R"|
+1  | 1  | 1 |04 |10 |
 
 ***********
+### Representação do mapa 
+  0 | 1 | 2 | 3 | 4 |
+:--:|:-:|:-:|:-:|:-:|
+ a  | b | c | d | e |
+f   |g  |h  | i | j |
+k   |l  |m  | n |o  |
+p   |q  |r  |s  |t  |
+u   |v  |w  |x  |y  |
+z   | aa|bb |cc |dd |
+ee  | ff|gg |hh |ii |
+jj  | kk|ll |mm |nn |
+***********
+## Estrutura OO para gerar o mapa 
+* [No](docs/No.png)
+* [Adjacente](docs/Adjacentes.png)
+* [Mapa](docs/Mapa.png)
+* [No](docs/No.png)
+***********
+## Algoritmos OO busca Largura e Profundidade 
+* [Largura](docs/Largura.png)
+* [Profundidade](docs/Profundidade.png)
+***********
+***********
+
 
 ## Mapa utilizado para a busca Gulosa e A*
   0 | 1 | 2 | 3 | 4 |
