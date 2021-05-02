@@ -1,5 +1,5 @@
 <p align = "center">
-<img src="logo/logo.jpg" width=300>
+<img src="images/logo.jpg" width=300>
 </p>
 
 # TRABALHO FUNDAMENTOS DE SISTEMAS INTELIGENTES ⌨
