@@ -12,18 +12,10 @@
 # Algoritmos
 ## Sem Informação
 * Busca em Largura (BFS)
-<p align = "left">
-  <img src="logo/bfs.png" width=125>
-</p>
-
 * Busca em Profundidade (DFS)
-<p align = "left">
-  <img src="logo/dfs.png" width=125>
-</p>
 
 ## Com Informação
 * Busca Gulosa 
-
 * Busca A*
 
 
@@ -80,14 +72,15 @@ ee  | ff|gg |hh |ii |
 jj  | kk|ll |mm |nn |
 ***********
 ## Estrutura OO para gerar o mapa 
-* [No](docs/No.png)
-* [Adjacente](docs/Adjacentes.png)
-* [Mapa](docs/Mapa.png)
-* [No](docs/No.png)
+* [No](images/No.png)
+* [Adjacente](images/Adjacentes.png)
+* [Mapa](images/Mapa.png)
+* [No](images/No.png)
 ***********
 ## Algoritmos OO busca  
-* [Largura](docs/Largura.png)
-* [Profundidade](docs/Profundidade.png)
+* [Largura](images/Largura.png)
+* [Profundidade](images/BuscaProfundidadeOO.png)
+
 ***********
 ## Algoritmos Script em Busca 
 * [Mapa](images/mapaScript.png)
@@ -102,12 +95,10 @@ jj  | kk|ll |mm |nn |
 ***********
 ## Resultatos
 * [Busca Gulosa Distancia Manthattan](images/GulosaDistanciaManhattan.png)
-* [Busca Gulosa em Linha Reta](images/GulosaLinhaReta.png.png)
-* [Busca Profundidade](images/Profundidade.png.png)
-
-
-
-
+* [Busca Gulosa em Linha Reta](images/GulosaLinhaReta.png)
+* [Busca Profundidade](images/Profundidade.png)
+* [Busca Largura](images/buscaLargura.png)
+* [Busca Largura *](images/buscaLargura2.png)
 ***********
 ***********
 
