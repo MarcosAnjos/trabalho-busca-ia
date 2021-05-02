@@ -81,12 +81,6 @@ def calcAdjaPesos(mapa, linhas, colunas):
                 mat_pesos.append(pesos) #[elemento] = pesos
 
     return [adjacencias, mat_pesos]
-    # print('--------ADJACENCIAS----------')
-    # print(adjacencias)
-    # print(len(adjacencias))
-    # print('--------PESOS----------')
-    # print(mat_pesos)
-    # print(len(mat_pesos))
 
 #CALCULO DE HEURISTICAS
 #DISTANCIAS EM LINHA RETA E MANHATTAN
@@ -215,8 +209,6 @@ def profundidadeVars(ori_i, ori_j, dest_i, dest_j):
 
     adjpesos = calcAdjaPesos(mapa, linhas, colunas) #0 lista [elemento, [i,j]], 1 lista pesos
     adjs = adjpesos[sw_adjs] #sw_adjs global
-    # print(adjs)
-    # print(len(adjs))
 
     profundidade([origem, [ori_i, ori_j]], [destino, [dest_i, dest_j]], visitados, caminhos, adjs)
 
@@ -225,8 +217,6 @@ def profundidadeVars(ori_i, ori_j, dest_i, dest_j):
 
     #Pega o menor caminho    
     for c in caminhos:
-        # print(len(c)) 
-        # print(c)
         if len(menor) > len(c): #pegando menor dos caminhos encontrados
             menor = c
     
@@ -236,8 +226,6 @@ def profundidadeVars(ori_i, ori_j, dest_i, dest_j):
 
     #Coloca o caminho no mapa
     for elemento, coord in menor: #menor:
-        # print(elemento, coord)
-        # print(coord[0], coord[1]) #mapa[cord[1], cord[0]] = *
         mapa[coord[0]][coord[1]] = 9
 
     print(":::Mapa:::")
