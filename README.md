@@ -85,22 +85,23 @@ jj  | kk|ll |mm |nn |
 * [Mapa](docs/Mapa.png)
 * [No](docs/No.png)
 ***********
-## Algoritmos OO busca Largura e Profundidade 
+## Algoritmos OO busca  
 * [Largura](docs/Largura.png)
 * [Profundidade](docs/Profundidade.png)
 ***********
+## Algoritmos Script em Busca 
+* [Mapa](images/mapaScript.png)
+* [Calculo das Adjacentes](images/calculoAdjacenciasPesos.png)
+* [Calculo Heuristicas](images/calHeuristicas.png)
+* [Busca Gulosa Vars](images/buscaGulosaVar.png)
+* [Busca Gulosa](images/buscaGulosa.png)
+* [Busca Profundidade Vars](images/buscaProfundidade.png)
+* [Busca Profundidade](images/buscaProfundidadeVar.png)
+* [Busca Profundidade](images/buscaProfundidadeVar.png)
 ***********
-
-
-## Mapa utilizado para a busca Gulosa e A*
-  0 | 1 | 2 | 3 | 4 |
-:--:|:-:|:-:|:-:|:-:|
- 1  | 1 | 10| 20| 0 |
-20  |"p"|"p"| 1 | 0 |
-1   | 1 | 4 | 1 |"R"|
-1   |"p"|"R"|20 |10 |
-10  |"p"|"p"| 1 | 4 |
-1  | 1  |20 |"F"|"p"|
+***********
+## Resultatos
+* [](images/.png)
 
 ***********
 ***********
