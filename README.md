@@ -101,7 +101,12 @@ jj  | kk|ll |mm |nn |
 ***********
 ***********
 ## Resultatos
-* [](images/.png)
+* [Busca Gulosa Distancia Manthattan](images/GulosaDistanciaManhattan.png)
+* [Busca Gulosa em Linha Reta](images/GulosaLinhaReta.png.png)
+* [Busca Profundidade](images/Profundidade.png.png)
+
+
+
 
 ***********
 ***********
