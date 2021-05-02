@@ -20,33 +20,26 @@
 
 
 ***********
-## Comparações entre os algoritmos de busca 
-
-Algoritmos  | Completa? | Tempo       | Espaço    | Ótima? |
-:----------:|:---------:|:-----------:|:---------:|:------:|
-BFS         | 
-DFS         | 
-Gulosa      | 
-A*          | 
-***********
 
 # Detalhes sobre o Trabalho
-
 ## Legendas
 
 Simbolo   | Descrição
 :-------: | ------------------
+-1         | Parede
+p         | Parede
 1         | Caminho vale 1
 4         | Caminho vale 4
 10        | Caminho vale 10
 20        | Caminho vale 20
-p         | Parede
 R         | Recompensa
+9         | Caminho para o objetivo
+
 
 ***********
 
-## Mapa utilizado para a busca BFS e DFS
-### Representação do mapa 
+## Mapa utilizado para a busca BFS e DFS em OO
+### Representação do mapa de pesos 
   0 | 1 | 2 | 3 | 4 |
 :--:|:-:|:-:|:-:|:-:|
  1  | 1 | 10| 20| 0 |
@@ -59,7 +52,8 @@ R         | Recompensa
 1  | 1  | 1 |04 |10 |
 
 ***********
-### Representação do mapa 
+### Representação do mapa de nós
+
   0 | 1 | 2 | 3 | 4 |
 :--:|:-:|:-:|:-:|:-:|
  a  | b | c | d | e |
@@ -71,6 +65,41 @@ z   | aa|bb |cc |dd |
 ee  | ff|gg |hh |ii |
 jj  | kk|ll |mm |nn |
 ***********
+
+
+## Mapa utilizado para a busca BFS e BGS em Script
+### Representação do mapa de pesos
+
+  0 | 1 | 2 | 3 | 4 | 5 | 6 |
+:--:|:-:|:-:|:-:|:-:|:-:|:-:|
+ 1  | 1 | 1 | 1 | 1 | 20| -1|
+ 1  | 0 | 0 | 0 | 0 | 1 | 0 |
+ 1  | 4 | 10| 10| 0 | 1 | 1 | 
+ 0  |-1 |10 |-1 | 0 | 0 | 1 |
+-1  | 0 | 4 | 0 | 0 | 1 | 1 |
+4   | 0 |-1 | 0 | 0 | 1 | 0 |
+1   | 1 | 1 | 1 | 4 | 1 | 1 |
+0   | 1 | 0 | 10| 0 | 0 | 1 | 
+0   | 1 | 1 | 1 | -2| 0 | 10|
+-1  | 4 | 0 | 0 | 4 | 4 |-1 |
+
+### Representação do mapa de nos
+
+  0 | 1 | 2 | 3 | 4 | 5 | 6 |
+:--:|:-:|:-:|:-:|:-:|:-:|:-:|
+ 0  | 1 | 2 | 3 | 4 | 5 | 6 |
+ 7  | 8 | 9 | 10| 11| 12| 13|
+ 14 | 15| 16| 17| 18| 19| 20| 
+ 21 | 22| 23| 24| 25| 26| 27|
+ 28 | 29| 30| 31| 32| 33| 34|
+ 35 | 36| 37| 38| 39| 40| 41|
+ 42 | 43| 44| 45| 46| 47| 48|
+ 49 | 50| 51| 52| 53| 54| 55| 
+ 56 | 57| 58| 59| 60| 61| 62|
+ 64 | 64| 65| 66| 67| 68| 69|
+
+
+
 ## Estrutura OO para gerar o mapa 
 * [No](images/No.png)
 * [Adjacente](images/Adjacentes.png)
