@@ -8,19 +8,6 @@ opt_dtlr = 1 #seleciona distancia em linha reta como heuristica
 sw_adjs = 0 #selecao de adjencia
 sw_pesos = 1 #selecao de pesos
 
-mapa = [
-    [1,  1 ,  1,  1,  1,  20,  -1],      #a,b,c,d,e
-    [1,  0 ,  0,  0,  0,  1,    0],       #f,g,h,i,j
-    [1,  4,  10,  10, 0,  1,    1],        #k,l,m,n,o
-    [0, -1,  10, -1,  0,  0,    1],         #p,q,r,s,t
-   [-1,  0,   4,  0,  0,  1,    1],          #u,v,w,x,y
-    [4,  0,  -1,  0,  0,  1,    0],          #u,v,w,x,y
-    [1,  1,   1,  1,  4,  1,    1],         #z,aa,bb,cc,dd
-    [0,  1,   0,  10, 0,  0,    1],       #ee,ff,gg,hh,ii
-    [0,  1,   1,  1, -2,  0,   10],        #jj,kk,ll,mm,nn
-   [-1,  4,   0,  0,  4,  4,   -1]
-]
-
 def resetMap():
     mapa = [
         [1,  1 ,  1,  1,  1,  20,  -1],      #a,b,c,d,e
@@ -52,8 +39,7 @@ def calcAdjaPesos(mapa, linhas, colunas):
             elementos = []
             pesos = []
             elemento = l*colunas+c
-            # print(adjacencias)
-            # print("elemento ==== ", l*7+c)
+         
             if mapa[l][c] == 0:
                 adjacencias.append(elementos)
                 mat_pesos.append(pesos)
@@ -102,9 +88,8 @@ def calcAdjaPesos(mapa, linhas, colunas):
     # print(mat_pesos)
     # print(len(mat_pesos))
 
-#calular heuristica
-#manhattan = soma da quantidade de passos para direita e para baixo.
-#passar i e j do destino e sera calculada a euristica para todos os elemenos
+#CALCULO DE HEURISTICAS
+#DISTANCIAS EM LINHA RETA E MANHATTAN
 def calcHeuristicas(dest_i, dest_j):
     heuristicas = []
     dest_i = 8
@@ -119,9 +104,7 @@ def calcHeuristicas(dest_i, dest_j):
             cat_i = 0 #cateto i para dist em linha reta
             cat_j = 0 #cateto j para dist em linha reta
             elemento = i*colunas+j
-            # print("elemento" ,elemento)
-            # print(i, j)
-            
+                        
             while aux_i != dest_i: #or aux_i > dest_i: #se i for diferente do fim
                 if aux_i < dest_i: #i < q fim
                     aux_i += 1 #soma ate chegar
@@ -149,9 +132,6 @@ def calcHeuristicas(dest_i, dest_j):
             heuristicas.append(h)
     
     return heuristicas
-    # print('--------HEURISTICAS----------')
-    # print(heuristicas)
-    # print(len(heuristicas))
 
 def buscaGulosaVars(ori_i, ori_j, dest_i, dest_j):
     
@@ -181,9 +161,7 @@ def buscaGulosaVars(ori_i, ori_j, dest_i, dest_j):
     print("::Caminho = ", caminho)
     print("::Saltos = ", len(caminho[0]))
 
-    for elemento, coord in caminho[0]: #menor:
-        # print(elemento, coord)
-        # print(coord[0], coord[1]) #mapa[cord[1], cord[0]] = *
+    for elemento, coord in caminho[0]:
         mapa[coord[0]][coord[1]] = 9
 
     print(":::Mapa:::")
@@ -192,7 +170,6 @@ def buscaGulosaVars(ori_i, ori_j, dest_i, dest_j):
             print(mapa[i][j], end='\t')
         print()
     
-
 def buscaGulosa(origem, destino, visitados, adjs, hrstc, h_opt, caminho):
     
     flag = False
@@ -205,7 +182,7 @@ def buscaGulosa(origem, destino, visitados, adjs, hrstc, h_opt, caminho):
         # print("Destino encontrado!")
         c = tuple(visitados)
         caminho.append(c)
-        # find = True
+        find = True
 
     while not find and len(visitados) > 0:
         for i in adjs[origem[0]]:
@@ -214,20 +191,12 @@ def buscaGulosa(origem, destino, visitados, adjs, hrstc, h_opt, caminho):
                 prox = i
                 
         if menor != 99999999 and flag == False:
-            # print("prox = ", prox)
-            # visitados.append(prox)
             flag = True
             visitados.append(prox)
-            # print("PRE RECURSAO", prox)
-            # print(visitados)
             return  buscaGulosa(prox, destino, visitados, adjs, hrstc, h_opt, caminho)
-            # print("POS RECURSAO", prox, flag)
-            # print(visitados)
         else:
             if flag:
-                # print("Volta", flag)
                 visitados.pop()
-                # print(visitados)
             break
 
     return caminho
@@ -281,32 +250,21 @@ def profundidadeVars(ori_i, ori_j, dest_i, dest_j):
 # BUSCA EM PROFUNDIDADE ARMAZENANDO MULTIPLOS CAMINHOS
 # START SETADO EM 0, 0
 def profundidade(origem, destino, visitados, caminhos, adjs):
-    flag = False #flag da recursao
+    flag = False
     if len(visitados) == 0:
         visitados.append(origem)
     if origem == destino:
+        # print("Destino encontrado!")
         # print(visitados)
-        c = tuple(visitados) #tupla e imutavel
+        c = tuple(visitados)
         caminhos.append(c)
-        # print("Destino encontrado\n", c)
-        # print(len(c), "saltos")
-        flag = True #troca flag da recursao
+        flag = True
     else:
-        # for adj in adjs[origem]:
-        #     if adj not in visitados:
-        #         print(visitados)
-        #         visitados.append(adj)
-        #         profundidade(adj, destino, visitados, caminhos, adjs)
-        # visitados.pop()
             adjcs = adjs[origem[0]]
-            # print("adjcs = ", adjcs)
             for adj in adjcs:
-                # print(adj)
                 if adj not in visitados:
                     visitados.append(adj)
-                    # print('VAI VAI = ', visitados)
                     profundidade(adj, destino, visitados, caminhos, adjs)
-                    # print("VOLTA VOLTA = ", visitados)
 
             if len(visitados) > 0:
                 visitados.pop()
